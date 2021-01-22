@@ -5,6 +5,7 @@ import { useDispatch, useSelector, connect } from 'react-redux';
 import { REMOVE_ITEM, CHECK_OUT } from '../redux/actionTypes';
 import { getCartItems } from '../redux/reducer';
 import { removeItem } from '../redux/actions';
+import { ToggleButton } from '../components/ToggleButton';
 
 export default function ShoppingCart() {
   const cartItems = useSelector(getCartItems);
@@ -12,6 +13,7 @@ export default function ShoppingCart() {
 
   return (
     <View style={styles.container}>
+      <ToggleButton />
       {cartItems.map((item) => (
         <CartItem
           key={item.id}
